@@ -9,7 +9,6 @@ spec:
       workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-nginx-mysql
   template:
     metadata:
-      creationTimestamp: null
       labels:
         workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-nginx-mysql
       namespace: default
@@ -20,8 +19,8 @@ spec:
             - configMapRef:
                 name: zabbix-db-cfg
                 optional: false
-            - secretRef:
-                name: mysqlrootpasswd
+            - configMapRef:
+                name: zabbix-env-cfg
                 optional: false
             - secretRef:
                 name: zabbixmysql
@@ -30,4 +29,4 @@ spec:
           imagePullPolicy: Always
           name: container-0
           ports:
-          - containerPort: 10051
+          - containerPort: 8080
