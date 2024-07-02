@@ -42,6 +42,9 @@ spec:
             - secretRef:
                 name: mysqlrootpasswd
                 optional: false
+            - secretRef:
+                name: zabbixmysql
+                optional: false
           image: zabbix/zabbix-server-mysql
           imagePullPolicy: Always
           name: container-0
