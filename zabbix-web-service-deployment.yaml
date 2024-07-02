@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zabbix-web-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-service
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-service
+      namespace: default
+    spec:
+      containers:
+        - env:
+            - name: ZBX_ALLOWEDIP
+              value: 0.0.0.0/0
+          envFrom:
+          image: zabbix/zabbix-web-service
+          imagePullPolicy: Always
+          name: container-0
+          ports: 
+          - containerPort: 10051
