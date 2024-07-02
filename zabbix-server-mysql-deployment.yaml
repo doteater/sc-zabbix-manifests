@@ -1,28 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: '1'
-  creationTimestamp: '2024-07-02T20:19:22Z'
-  generation: 1
-  labels:
-    workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-server-mysql
   name: zabbix-server-mysql
-  namespace: default
-  resourceVersion: '12578'
-  uid: d72956c2-527f-4925-aca7-000d6b11dc96
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-server-mysql
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       creationTimestamp: null
@@ -30,7 +14,6 @@ spec:
         workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-server-mysql
       namespace: default
     spec:
-      affinity: {}
       containers:
         - env:
             - name: ZBX_WEBSERVICEURL
@@ -49,19 +32,4 @@ spec:
           imagePullPolicy: Always
           name: container-0
           ports:
-            - containerPort: 10051
-              name: 10051tcp
-              protocol: TCP
-          resources: {}
-          securityContext:
-            allowPrivilegeEscalation: false
-            privileged: false
-            readOnlyRootFilesystem: false
-            runAsNonRoot: false
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+          - containerPort: 10051
