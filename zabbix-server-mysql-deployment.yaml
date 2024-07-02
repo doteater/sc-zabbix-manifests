@@ -137,6 +137,9 @@ spec:
             - configMapRef:
                 name: zabbix-db-cfg
                 optional: false
+            - secretRef:
+                name: mysqlrootpasswd
+                optional: false
           image: zabbix/zabbix-server-mysql
           imagePullPolicy: Always
           name: container-0
