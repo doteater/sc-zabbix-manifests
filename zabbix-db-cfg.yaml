@@ -4,10 +4,6 @@ data:
   DB_SERVER_PORT: '6033'
 kind: ConfigMap
 metadata:
-  annotations:
-    meta.helm.sh/release-name: sc-zabbix-manifests
-    meta.helm.sh/release-namespace: default
-    objectset.rio.cattle.io/id: default-sc-zabbix-manifests
   labels:
     app.kubernetes.io/managed-by: Helm
     objectset.rio.cattle.io/hash: 0c16050ec9f94107e1cad2cffff29f245fc394bb
