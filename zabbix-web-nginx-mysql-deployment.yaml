@@ -8,16 +8,6 @@ spec:
     metadata:
     spec:
       containers:
-          envFrom:
-            - configMapRef:
-                name: zabbix-db-cfg
-                optional: false
-            - configMapRef:
-                name: zabbix-env-cfg
-                optional: false
-            - secretRef:
-                name: zabbixmysql
-                optional: false
           image: zabbix/zabbix-web-nginx-mysql
           imagePullPolicy: Always
           name: container-0
