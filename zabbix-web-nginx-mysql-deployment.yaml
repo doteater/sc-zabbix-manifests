@@ -15,9 +15,6 @@ spec:
       namespace: default
     spec:
       containers:
-        - env:
-            - name: ZBX_WEBSERVICEURL
-              value: https://zabbix-web-service:10053/report
           envFrom:
             - configMapRef:
                 name: zabbix-db-cfg
