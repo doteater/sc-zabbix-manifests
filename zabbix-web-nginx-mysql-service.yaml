@@ -4,7 +4,6 @@ metadata:
   annotations:
     field.cattle.io/targetWorkloadIds: '["default/zabbix-web-nginx-mysql"]'
     management.cattle.io/ui-managed: 'true'
-  creationTimestamp: '2024-07-02T23:08:58Z'
   managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
