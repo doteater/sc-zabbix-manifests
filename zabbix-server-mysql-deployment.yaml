@@ -133,6 +133,10 @@ spec:
         - env:
             - name: ZBX_WEBSERVICEURL
               value: https://zabbix-web-service:10053/report
+          envFrom:
+            - configMapRef:
+                name: zabbix-db-cfg
+                optional: false
           image: zabbix/zabbix-server-mysql
           imagePullPolicy: Always
           name: container-0
