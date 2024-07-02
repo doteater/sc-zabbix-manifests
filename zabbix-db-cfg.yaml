@@ -21,4 +21,5 @@ metadata:
           f:DB_SERVER_PORT: {}
       manager: fleetagent
       operation: Update
+      time: '2024-07-02T22:42:49Z'
   name: zabbix-db-cfg
