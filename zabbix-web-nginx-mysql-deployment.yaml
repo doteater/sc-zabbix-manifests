@@ -28,7 +28,7 @@ spec:
             - secretRef:
                 name: zabbixmysql
                 optional: false
-          image: zabbix/zabbix-server-mysql
+          image: zabbix/zabbix-web-nginx-mysql
           imagePullPolicy: Always
           name: container-0
           ports:
