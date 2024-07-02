@@ -12,4 +12,4 @@ metadata:
           .: {}
           f:DB_SERVER_HOST: {}
           f:DB_SERVER_PORT: {}
-  name: zabbix-db-cfg-map
+  name: zabbix-db-cfg
