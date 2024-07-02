@@ -4,7 +4,6 @@ data:
   DB_SERVER_PORT: '6033'
 kind: ConfigMap
 metadata:
-  creationTimestamp: '2024-07-02T22:35:03Z'
   managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -13,9 +12,6 @@ metadata:
           .: {}
           f:DB_SERVER_HOST: {}
           f:DB_SERVER_PORT: {}
-      manager: agent
-      operation: Update
-      time: '2024-07-02T22:35:03Z'
   name: zabbix-db-cfg
   namespace: default
   resourceVersion: '59001'
