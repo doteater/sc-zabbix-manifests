@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zabbix-proxy-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-proxy-mysql
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-proxy-mysql
+      namespace: default
+    spec:
+      containers:
+        - env:
+          envFrom:
+            - configMapRef:
+                name: zabbix-db-cfg
+                optional: false
+            - configMapRef:
+                name: zabbix-env-cfg
+                optional: false
+            - secretRef:
+                name: mysqlrootpasswd
+                optional: false
+            - secretRef:
+                name: zabbixmysql
+                optional: false
+          image: zabbix/zabbix-proxy-mysql
+          imagePullPolicy: Always
+          name: container-0
+          ports:
+          - containerPort: 10051
