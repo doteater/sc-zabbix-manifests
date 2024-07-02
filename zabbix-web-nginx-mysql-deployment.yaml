@@ -15,6 +15,7 @@ spec:
       namespace: default
     spec:
       containers:
+        - env:
           envFrom:
             - configMapRef:
                 name: zabbix-db-cfg
