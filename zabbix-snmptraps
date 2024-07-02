@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zabbix-snmptraps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-snmptraps
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-snmptraps
+      namespace: default
+    spec:
+      containers:
+        - env:
+          envFrom:
+          image: zabbix/zabbix-snmptraps
+          imagePullPolicy: Always
+          name: container-0
+          ports:
+          - containerPort: 1162
