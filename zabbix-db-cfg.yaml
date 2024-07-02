@@ -13,4 +13,3 @@ metadata:
           f:DB_SERVER_HOST: {}
           f:DB_SERVER_PORT: {}
   name: zabbix-db-cfg-map
-  uid: a673c058-937f-4062-9dd4-6b4883692517
