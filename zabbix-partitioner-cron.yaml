@@ -1,65 +1,6 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  managedFields:
-    - apiVersion: batch/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          f:concurrencyPolicy: {}
-          f:failedJobsHistoryLimit: {}
-          f:jobTemplate:
-            f:metadata:
-              f:namespace: {}
-            f:spec:
-              f:template:
-                f:spec:
-                  f:affinity: {}
-                  f:containers:
-                    k:{"name":"container-0"}:
-                      .: {}
-                      f:env:
-                        .: {}
-                        k:{"name":"DB_DATABASE"}:
-                          .: {}
-                          f:name: {}
-                          f:value: {}
-                        k:{"name":"DB_HOST"}:
-                          .: {}
-                          f:name: {}
-                          f:value: {}
-                        k:{"name":"DB_PORT"}:
-                          .: {}
-                          f:name: {}
-                          f:value: {}
-                        k:{"name":"LOG_PATH"}:
-                          .: {}
-                          f:name: {}
-                          f:value: {}
-                        k:{"name":"TZ"}:
-                          .: {}
-                          f:name: {}
-                          f:value: {}
-                        k:{"name":"ZABBIX_REPOSITORY"}:
-                          .: {}
-                          f:name: {}
-                          f:value: {}
-                      f:image: {}
-                      f:imagePullPolicy: {}
-                      f:name: {}
-                      f:resources: {}
-                      f:terminationMessagePath: {}
-                      f:terminationMessagePolicy: {}
-                  f:dnsPolicy: {}
-                  f:restartPolicy: {}
-                  f:schedulerName: {}
-                  f:securityContext: {}
-                  f:terminationGracePeriodSeconds: {}
-          f:schedule: {}
-          f:successfulJobsHistoryLimit: {}
-          f:suspend: {}
-      manager: agent
-      operation: Update
   name: zabbix-partitioner
 spec:
   concurrencyPolicy: Allow
