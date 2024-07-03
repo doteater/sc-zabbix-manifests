@@ -89,6 +89,10 @@ spec:
                   value: zabbix
                 - name: TZ
                   value: ETC/UTC
+             envFrom:
+                - secretRef: zabbix-partitioner-mysql
+                    name:
+                    optional: false
               image: cjohnson282/sc-zabbix-partition:latest
               imagePullPolicy: Always
               name: container-0
