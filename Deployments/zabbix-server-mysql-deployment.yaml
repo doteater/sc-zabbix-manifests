@@ -31,5 +31,3 @@ spec:
           image: zabbix/zabbix-server-mysql
           imagePullPolicy: Always
           name: container-0
-          ports:
-          - containerPort: 10051
