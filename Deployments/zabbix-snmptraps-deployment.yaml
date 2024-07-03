@@ -19,5 +19,3 @@ spec:
           image: zabbix/zabbix-snmptraps
           imagePullPolicy: Always
           name: container-0
-          ports:
-          - containerPort: 1162
