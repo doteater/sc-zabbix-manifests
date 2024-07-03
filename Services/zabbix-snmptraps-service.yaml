@@ -9,5 +9,6 @@ spec:
   type: NodePort
   ports:
   - port: 162
+    targetPort: 1162
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-snmptraps
