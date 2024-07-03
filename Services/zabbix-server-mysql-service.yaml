@@ -13,4 +13,4 @@ spec:
   ports:
   - port: 10051
   selector:
-    workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-nginx-mysql
+    workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-server-mysql
