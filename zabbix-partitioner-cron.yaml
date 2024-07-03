@@ -1,8 +1,6 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  creationTimestamp: '2024-07-03T17:19:41Z'
-  generation: 1
   managedFields:
     - apiVersion: batch/v1
       fieldsType: FieldsV1
@@ -62,11 +60,7 @@ metadata:
           f:suspend: {}
       manager: agent
       operation: Update
-      time: '2024-07-03T17:19:41Z'
   name: zabbix-partitioner
-  namespace: default
-  resourceVersion: '411842'
-  uid: dc13ad2c-9c66-4eed-8b39-308445c7c639
 spec:
   concurrencyPolicy: Allow
   failedJobsHistoryLimit: 1
@@ -109,4 +103,3 @@ spec:
   schedule: 16 10 * * *
   successfulJobsHistoryLimit: 3
   suspend: false
-status: {}
