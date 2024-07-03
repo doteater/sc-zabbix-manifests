@@ -1,0 +1,112 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: '2024-07-03T17:19:41Z'
+  generation: 1
+  managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:concurrencyPolicy: {}
+          f:failedJobsHistoryLimit: {}
+          f:jobTemplate:
+            f:metadata:
+              f:namespace: {}
+            f:spec:
+              f:template:
+                f:spec:
+                  f:affinity: {}
+                  f:containers:
+                    k:{"name":"container-0"}:
+                      .: {}
+                      f:env:
+                        .: {}
+                        k:{"name":"DB_DATABASE"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                        k:{"name":"DB_HOST"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                        k:{"name":"DB_PORT"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                        k:{"name":"LOG_PATH"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                        k:{"name":"TZ"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                        k:{"name":"ZABBIX_REPOSITORY"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                      f:image: {}
+                      f:imagePullPolicy: {}
+                      f:name: {}
+                      f:resources: {}
+                      f:terminationMessagePath: {}
+                      f:terminationMessagePolicy: {}
+                  f:dnsPolicy: {}
+                  f:restartPolicy: {}
+                  f:schedulerName: {}
+                  f:securityContext: {}
+                  f:terminationGracePeriodSeconds: {}
+          f:schedule: {}
+          f:successfulJobsHistoryLimit: {}
+          f:suspend: {}
+      manager: agent
+      operation: Update
+      time: '2024-07-03T17:19:41Z'
+  name: zabbix-partitioner
+  namespace: default
+  resourceVersion: '411842'
+  uid: dc13ad2c-9c66-4eed-8b39-308445c7c639
+spec:
+  concurrencyPolicy: Allow
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      namespace: default
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          affinity: {}
+          containers:
+            - env:
+                - name: ZABBIX_REPOSITORY
+                  value: >-
+                    https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
+                - name: LOG_PATH
+                  value: /var/log/mysql_zbx_part.log
+                - name: DB_HOST
+                  value: 10.9.14.20
+                - name: DB_PORT
+                  value: '6033'
+                - name: DB_DATABASE
+                  value: zabbix
+                - name: TZ
+                  value: ETC/UTC
+              image: cjohnson282/sc-zabbix-partition:latest
+              imagePullPolicy: Always
+              name: container-0
+              resources: {}
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+          dnsPolicy: ClusterFirst
+          restartPolicy: Never
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+  schedule: 16 10 * * *
+  successfulJobsHistoryLimit: 3
+  suspend: false
+status: {}
