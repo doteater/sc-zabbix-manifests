@@ -89,7 +89,7 @@ spec:
                   value: zabbix
                 - name: TZ
                   value: ETC/UTC
-             envFrom:
+              envFrom:
                 - secretRef: zabbix-partitioner-mysql
                     name:
                     optional: false
