@@ -6,9 +6,6 @@ spec:
   concurrencyPolicy: Allow
   failedJobsHistoryLimit: 1
   jobTemplate:
-    metadata:
-      creationTimestamp: null
-      namespace: default
     spec:
       template:
         metadata:
