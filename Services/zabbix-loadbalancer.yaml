@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["10.9.15.101"],"port":80,"protocol":"TCP","serviceName":"default:zabbixlb","allNodes":false}]
+    metallb.universe.tf/ip-allocated-from-pool: mymetallbpool
+  creationTimestamp: '2024-07-08T23:53:12Z'
+  name: zabbix-loadbalancer
+spec:
+  allocateLoadBalancerNodePorts: true
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  loadBalancerIP: 10.9.15.101
+  ports:
+    - name: myport
+      nodePort: 30748
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-nginx-mysql
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+      - ip: 10.9.15.101
