@@ -5,11 +5,9 @@ metadata:
 spec:
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-agent
-  loadBalancerIP: 10.9.15.120
   ports:
     - name: myport
       port: 10050
       protocol: TCP
       targetPort: 10050
-  sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP
