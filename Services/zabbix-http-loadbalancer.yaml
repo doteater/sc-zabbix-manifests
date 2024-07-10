@@ -9,7 +9,7 @@ spec:
   ipFamilies:
     - IPv4
   ipFamilyPolicy: SingleStack
-  loadBalancerIP: 10.9.15.100
+  loadBalancerIP: 10.9.15.101
   ports:
     - name: myport
       nodePort: 30748
@@ -18,9 +18,4 @@ spec:
       targetPort: 8080
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-nginx-mysql
-  sessionAffinity: None
   type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-      - ip: 10.9.15.100
