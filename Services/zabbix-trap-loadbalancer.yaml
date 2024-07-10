@@ -14,7 +14,7 @@ spec:
     - name: myport
       nodePort: 30323
       port: 162
-      protocol: TCP
+      protocol: UDP
       targetPort: 1162
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-snmptraps
