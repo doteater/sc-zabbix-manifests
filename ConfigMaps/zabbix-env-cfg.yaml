@@ -2,6 +2,7 @@ apiVersion: v1
 data:
   ZBX_SERVER_HOST: zabbix-server-mysql
   ZBX_WEBSERVICEURL: https://zabbix-web-service:10053/report
+  ZBX_STARTREPORTWRITERS: 1
 kind: ConfigMap
 metadata:
   name: zabbix-env-cfg
