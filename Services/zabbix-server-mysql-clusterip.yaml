@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: zabbix-server-mysql-clusterip
+  name: zabbix-server-mysql
   namespace: default
 spec:
   selector:
