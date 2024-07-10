@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-proxy-mysql
-  loadBalancerIP: 10.9.15.101
+  loadBalancerIP: 10.9.15.110
   ports:
     - name: myport
       port: 10051
