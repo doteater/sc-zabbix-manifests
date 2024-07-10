@@ -9,7 +9,7 @@ spec:
   ipFamilies:
     - IPv4
   ipFamilyPolicy: SingleStack
-  loadBalancerIP: 10.9.15.101
+  loadBalancerIP: 10.9.15.100
   ports:
     - name: myport
       nodePort: 30748
@@ -23,4 +23,4 @@ spec:
 status:
   loadBalancer:
     ingress:
-      - ip: 10.9.15.101
+      - ip: 10.9.15.100
