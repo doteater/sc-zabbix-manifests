@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zabbix-web-service
+  namespace: default
+spec:
+  selector:
+    workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-web-service
+  ports:
+    - name: myport
+      port: 10053
+      protocol: TCP
+      targetPort: 10053
+  sessionAffinity: None
+  type: ClusterIP
