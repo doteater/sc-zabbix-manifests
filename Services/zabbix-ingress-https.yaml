@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zabbix-ingress-https
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: monitoring.sentracam.net
+      http:
+        paths:
+          - backend:
+              service:
+                name: zabbix-web-nginx-mysql-service
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - cert
