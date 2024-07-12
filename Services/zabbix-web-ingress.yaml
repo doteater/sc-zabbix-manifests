@@ -17,5 +17,5 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - cert
+        - monitoring-cert
       secretName: monitoring-tls
