@@ -17,5 +17,5 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - monitoring-cert
+        - monitoring.sentracam.net
       secretName: monitoring-tls
