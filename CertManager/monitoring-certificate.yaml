@@ -8,4 +8,4 @@ spec:
   secretName: monitoring-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
-    kind: Issuer
+    kind: ClusterIssuer
