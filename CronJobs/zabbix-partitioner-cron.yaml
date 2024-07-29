@@ -20,9 +20,9 @@ spec:
                 - name: LOG_PATH
                   value: /var/log/mysql_zbx_part.log
                 - name: DB_HOST
-                  value: 10.9.14.20
+                  value: zabbix-haproxy.pxc.svc
                 - name: DB_PORT
-                  value: '6033'
+                  value: '3306'
                 - name: DB_DATABASE
                   value: zabbix
                 - name: TZ
