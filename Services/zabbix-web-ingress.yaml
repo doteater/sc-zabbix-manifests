@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: zabbix-web-ingress
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.9.15.100
 spec:
   ingressClassName: nginx
   rules:
