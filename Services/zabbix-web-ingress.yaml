@@ -4,6 +4,7 @@ metadata:
   name: zabbix-web-ingress
   annotations:
     metallb.universe.tf/loadBalancerIPs: 10.9.15.100
+    metallb.universe.tf/address-pool: mymetallbpool
 spec:
   ingressClassName: nginx
   rules:
