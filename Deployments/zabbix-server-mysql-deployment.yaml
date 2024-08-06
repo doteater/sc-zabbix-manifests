@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: zabbix-server-mysql
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       workload.user.cattle.io/workloadselector: apps.deployment-default-zabbix-server-mysql
